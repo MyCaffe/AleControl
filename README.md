@@ -28,7 +28,7 @@ design MyCaffe based models that are both compatible with native CAFFE and suppo
 * Visual Studio 2015</br>
 </br>
 
-<h>References</h>
+<h3>References</h3>
 [1] [The Arcade Learning Envrionment: An Evaluation Platform for General Agents](https://arxiv.org/abs/1207.4708) by Marc G. Bellemare, 
 Yavar Naddaf, Joel Veness and Michael Bowling, 2012-2013.  Source code available on GitHub at <a href="https://github.com/mgbellemare/Arcade-Learning-Environment">mgbellemare/Arcade-Learning-Envrionment</a>
 
