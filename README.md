@@ -6,14 +6,14 @@ For more information on ALE, please see https://github.com/mgbellemare/Arcade-Le
 
 For more information on Stella, please see https://github.com/stella-emu/stella
 
-The <b>AleControl</b> uses the 'atari_win64' source tree which is a fork off the ALE Github tree that has been modified to run as a Windows 64-bit DLL and is licensed under the GNU license. 
+The <b>AleControl</b> uses the 'atari_win64' source tree which is a fork off the ALE Github tree that has been modified to run as a Windows 64-bit DLL and is licensed under the <a href="https://github.com/MyCaffe/AleControl/blob/master/atari_win64/License.txt">GNU license</a>. 
 
 The 'atari_win64' project uses the Simple DirectMedia Layer (SDL for short) which is a cross-platform library designed to make it easy to write multi-media software such as games and emulators. 
 
 The Simple DirectMedia Layer library source code is available from: http://www.libsdl.org, and the SDL library is distributed under the terms of
 the GNU LGPL License http://www.gnu.org/copyleft/lesser.html.
 
-The <b>AleControl</b>, written by <a href="https://www.signalpop.com">SignalPop LLC</a>, is a Windows 64-bit COM control that gives any OLE Automation enabled language (C#, Visual Basic, etc) easy access to the ALE envrionment via OLE Automation and is licensed under the Apache 2.0 license.  An extensive list of ATARI game ROM files is provided by OpenAI on Github at <a href="https://github.com/openai/atari-py/tree/master/atari_py/atari_roms">openai/atari-py/atari_roms</a> and are distributed under the <a href="https://github.com/openai/atari-py/blob/master/License.txt">GNU GPL License</a>.
+The <b>AleControl</b>, written by <a href="https://www.signalpop.com">SignalPop LLC</a>, is a Windows 64-bit COM control that gives any OLE Automation enabled language (C#, Visual Basic, etc) easy access to the ALE envrionment via OLE Automation and is licensed under the <a href="https://github.com/MyCaffe/AleControl/blob/master/LICENSE">Apache 2.0 license</a>.  An extensive list of ATARI game ROM files is provided by OpenAI on Github at <a href="https://github.com/openai/atari-py/tree/master/atari_py/atari_roms">openai/atari-py/atari_roms</a> and are distributed under the <a href="https://github.com/openai/atari-py/blob/master/License.txt">GNU GPL License</a>.
 You can also use Nuget to get the <a href="https://www.nuget.org/packages?q=AleControl">AleControl</a>.
 
 When used in combination with <a href="https://github.com/mycaffe">MyCaffe</a> (A complete C# re-write of CAFFE[3]) the AleControl can be used to solve 
