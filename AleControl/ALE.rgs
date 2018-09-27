@@ -1,0 +1,26 @@
+HKCR
+{
+	AleControl.ALE.1 = s 'ALE Class'
+	{
+		CLSID = s '{BEF72533-C14E-409A-886C-E73FC55A1969}'
+	}
+	AleControl.ALE = s 'ALE Class'
+	{
+		CLSID = s '{BEF72533-C14E-409A-886C-E73FC55A1969}'
+		CurVer = s 'AleControl.ALE.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BEF72533-C14E-409A-886C-E73FC55A1969} = s 'ALE Class'
+		{
+			ProgID = s 'AleControl.ALE.1'
+			VersionIndependentProgID = s 'AleControl.ALE'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			'TypeLib' = s '{82C7CC30-DEED-45BF-AE0A-1F6DDC7E9819}'
+		}
+	}
+}

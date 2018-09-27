@@ -1,0 +1,176 @@
+// AleControl.idl : IDL source for AleControl
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AleControl.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(88E91CB1-F70C-49B5-8D10-88F23C9919C2)
+]
+typedef enum _COLORTYPE
+{
+	CT_COLOR,
+	CT_GRAYSCALE
+} COLORTYPE;
+
+[
+	uuid(F60C1878-6C17-4C31-B4E7-8BD6365E6171)
+]
+typedef enum _ACTION {
+	ACT_PLAYER_A_NOOP = 0,
+	ACT_PLAYER_A_FIRE = 1,
+	ACT_PLAYER_A_UP = 2,
+	ACT_PLAYER_A_RIGHT = 3,
+	ACT_PLAYER_A_LEFT = 4,
+	ACT_PLAYER_A_DOWN = 5,
+	ACT_PLAYER_A_UPRIGHT = 6,
+	ACT_PLAYER_A_UPLEFT = 7,
+	ACT_PLAYER_A_DOWNRIGHT = 8,
+	ACT_PLAYER_A_DOWNLEFT = 9,
+	ACT_PLAYER_A_UPFIRE = 10,
+	ACT_PLAYER_A_RIGHTFIRE = 11,
+	ACT_PLAYER_A_LEFTFIRE = 12,
+	ACT_PLAYER_A_DOWNFIRE = 13,
+	ACT_PLAYER_A_UPRIGHTFIRE = 14,
+	ACT_PLAYER_A_UPLEFTFIRE = 15,
+	ACT_PLAYER_A_DOWNRIGHTFIRE = 16,
+	ACT_PLAYER_A_DOWNLEFTFIRE = 17,
+	ACT_PLAYER_B_NOOP = 18,
+	ACT_PLAYER_B_FIRE = 19,
+	ACT_PLAYER_B_UP = 20,
+	ACT_PLAYER_B_RIGHT = 21,
+	ACT_PLAYER_B_LEFT = 22,
+	ACT_PLAYER_B_DOWN = 23,
+	ACT_PLAYER_B_UPRIGHT = 24,
+	ACT_PLAYER_B_UPLEFT = 25,
+	ACT_PLAYER_B_DOWNRIGHT = 26,
+	ACT_PLAYER_B_DOWNLEFT = 27,
+	ACT_PLAYER_B_UPFIRE = 28,
+	ACT_PLAYER_B_RIGHTFIRE = 29,
+	ACT_PLAYER_B_LEFTFIRE = 30,
+	ACT_PLAYER_B_DOWNFIRE = 31,
+	ACT_PLAYER_B_UPRIGHTFIRE = 32,
+	ACT_PLAYER_B_UPLEFTFIRE = 33,
+	ACT_PLAYER_B_DOWNRIGHTFIRE = 34,
+	ACT_PLAYER_B_DOWNLEFTFIRE = 35,
+	ACT_RESET = 40, // MGB: Use SYSTEM_RESET to reset the environment. 
+	ACT_UNDEFINED = 41,
+	ACT_RANDOM = 42,
+	ACT_SAVE_STATE = 43,
+	ACT_LOAD_STATE = 44,
+	ACT_SYSTEM_RESET = 45,
+	ACT_LAST_ACTION_INDEX = 50
+} ACTION;
+
+[
+	object,
+	uuid(03B057C8-7980-433D-B088-23D4C2179306),
+	dual,
+	nonextensible,
+	helpstring("IALE Interface"),
+	pointer_default(unique)
+]
+interface IALE : IDispatch{
+	[id(1), helpstring("method Load")] 
+	HRESULT Load([in] BSTR bstrGameROM);
+
+	[id(2), propput, helpstring("property put_EnableSound")]
+	HRESULT EnableSound([in] VARIANT_BOOL bEnable);
+	[id(2), propget, helpstring("property get_EnableSound")]
+	HRESULT EnableSound([out, retval] VARIANT_BOOL* pbEnable);
+
+	[id(3), propput, helpstring("property put_EnableDisplayScreen")]
+	HRESULT EnableDisplayScreen([in] VARIANT_BOOL bEnable);
+	[id(3), propget, helpstring("property get_EnableDisplayScreen")]
+	HRESULT EnableDisplayScreen([out, retval] VARIANT_BOOL* pbEnable);
+
+	[id(4), propput, helpstring("property put_RandomSeed")]
+	HRESULT RandomSeed([in] int nSeed);
+	[id(4), propget, helpstring("property get_RandomSeed")]
+	HRESULT RandomSeed([out, retval] int* pnSeed);
+
+	[id(5), propput, helpstring("property put_RepeatActionProbability")]
+	HRESULT RepeatActionProbability([in] float fProb);
+	[id(5), propget, helpstring("property get_RepeatActionProbability")]
+	HRESULT RepeatActionProbability([out, retval] float* pfProb);
+
+	[id(6), propget, helpstring("property get_ActionSpace")]
+	HRESULT ActionSpace([out, retval] SAFEARRAY(ACTION) *rgActions);
+
+	[id(7), propget, helpstring("property get_GameOver")]
+	HRESULT GameOver([out, retval] VARIANT_BOOL* pbGameOver);
+
+	[id(8), helpstring("method Act")]
+	HRESULT Act([in] ACTION action, [out, retval] float *pfReward);
+
+	[id(9), helpstring("method ResetGame")]
+	HRESULT ResetGame();
+
+	[id(10), propput, helpstring("property put_MaxNumFrames")]
+	HRESULT MaxNumFrames([in] int nMax);
+	[id(10), propget, helpstring("property get_MaxNumFrames")]
+	HRESULT MaxNumFrames([out, retval] int* pnMax);
+
+	[id(11), helpstring("method GetScreenData")]
+	HRESULT GetScreenData([in] COLORTYPE clrType, [out, retval] SAFEARRAY(byte) *rgData);
+
+	[id(12), helpstring("method GetScreenDimensions")]
+	HRESULT GetScreenDimensions([out] float* pfWidth, [out] float* pfHeight);
+
+	[id(13), propput, helpstring("property put_EnableRestrictedActionSet")]
+	HRESULT EnableRestrictedActionSet([in] VARIANT_BOOL bEnable);
+	[id(13), propget, helpstring("property get_EnableRestrictedActionSet")]
+	HRESULT EnableRestrictedActionSet([out, retval] VARIANT_BOOL* pbEnable);
+
+	[id(14), propput, helpstring("property put_EnableColorData")]
+	HRESULT EnableColorData([in] VARIANT_BOOL bEnable);
+	[id(14), propget, helpstring("property get_EnableColorData")]
+	HRESULT EnableColorData([out, retval] VARIANT_BOOL* pbEnable);
+
+	[id(15), propput, helpstring("property put_EnableColorAveraging")]
+	HRESULT EnableColorAveraging([in] VARIANT_BOOL bEnable);
+	[id(15), propget, helpstring("property get_EnableColorAveraging")]
+	HRESULT EnableColorAveraging([out, retval] VARIANT_BOOL* pbEnable);
+
+	[id(16), helpstring("method Shutdown")]
+	HRESULT Shutdown();
+	[id(17), helpstring("method Initialize")]
+	HRESULT Initialize();
+
+	[id(18), propget, helpstring("property get_LegalActionSpace")]
+	HRESULT LegalActionSpace([out, retval] SAFEARRAY(ACTION) *rgActions);
+
+	[id(19), propget, helpstring("property get_MinimalActionSpace")]
+	HRESULT MinimalActionSpace([out, retval] SAFEARRAY(ACTION) *rgActions);
+};
+
+[
+	uuid(82C7CC30-DEED-45BF-AE0A-1F6DDC7E9819),
+	version(1.0),
+	helpstring("AleControl 1.0 Type Library")
+]
+library AleControlLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(E3B7A4A8-724E-4343-9F6E-3FC54653D480),
+		helpstring("_IALEEvents Interface")
+	]
+	dispinterface _IALEEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(BEF72533-C14E-409A-886C-E73FC55A1969),
+		helpstring("ALE Class")
+	]
+	coclass ALE
+	{
+		[default] interface IALE;
+		[default, source] dispinterface _IALEEvents;
+	};
+};
