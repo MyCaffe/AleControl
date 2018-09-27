@@ -501,6 +501,21 @@
     <Filter Include="zlib">
       <UniqueIdentifier>{eb0d2c35-ef98-44d0-ba5c-5dade9bb695a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="windows">
+      <UniqueIdentifier>{bb2e0ac1-a99a-476b-b9cc-bad51b068156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\SDL">
+      <UniqueIdentifier>{115d45c7-2068-4564-95a7-60edc507be9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\SDL\lib">
+      <UniqueIdentifier>{258adf2b-283f-4ec5-9ec2-a839b45d6bc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\SDL\lib\x64">
+      <UniqueIdentifier>{80693d70-cead-41b9-b267-308c27bf5f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\SDL\include">
+      <UniqueIdentifier>{c5ecfd1e-8f1d-4f23-837b-19a08548509d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\common\Array.hxx">
@@ -978,8 +993,144 @@
     <ClInclude Include="..\stdafx.h" />
     <ClInclude Include="..\targetver.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SDL\include\begin_code.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\close_code.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_active.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_audio.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_byteorder.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_cdrom.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_dreamcast.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_macos.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_macosx.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_minimal.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_nds.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_os2.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_symbian.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_config_win32.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_copying.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_cpuinfo.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_endian.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_error.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_events.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_getenv.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_joystick.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_keyboard.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_keysym.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_loadso.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_main.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_mouse.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_mutex.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_name.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_opengl.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_platform.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_quit.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_rwops.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_stdinc.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_syswm.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_thread.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_timer.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_types.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_version.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\include\SDL_video.h">
+      <Filter>windows\SDL\include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDL\lib\x64\SDL.dll">
+      <Filter>windows\SDL\lib\x64</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SDL\lib\x64\SDL.lib">
+      <Filter>windows\SDL\lib\x64</Filter>
+    </Library>
+    <Library Include="SDL\lib\x64\SDLmain.lib">
+      <Filter>windows\SDL\lib\x64</Filter>
+    </Library>
   </ItemGroup>
 </Project>
