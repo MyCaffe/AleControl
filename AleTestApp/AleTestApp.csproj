@@ -87,7 +87,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if not exist $(ProjectDir)_references md $(ProjectDir)_references
-copy $(SolutionDir)AleControl\x64\$(ConfigurationName)\AleControlLib.dll $(ProjectDir)_references</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
