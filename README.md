@@ -28,13 +28,12 @@ design MyCaffe based models that are both compatible with native CAFFE and suppo
 * Visual Studio 2015</br>
 </br>
 <h3>References</h3>
-</br>
 [1] [The Arcade Learning Envrionment: An Evaluation Platform for General Agents](https://arxiv.org/abs/1207.4708) by Marc G. Bellemare, 
 Yavar Naddaf, Joel Veness and Michael Bowling, 2012-2013.  Source code available on GitHub at <a href="https://github.com/mgbellemare/Arcade-Learning-Environment">mgbellemare/Arcade-Learning-Envrionment</a>
-</br>
+</br></br>
 [2] [Stella - A multi-platform Atari 2600 VCS emulator](https://stella-emu.github.io/) by Bradford W. Mott, Stephen Anthony and The Stella Team, 1995-2018
 Source code available on GitHub at <a href="https://github.com/stella-emu/stella">stella-emu/stella</a>
-</br>
+</br></br>
 [3] [CAFFE: Convolutional Architecture for Fast Feature Embedding](https://arxiv.org/abs/1408.5093) by Yangqing Jai, Evan Shelhamer, Jeff Donahue, 
 Sergey Karayev, Jonathan Long, Ross Girshick, Sergio Guadarrama, and Trevor Darrell, 2014.  Source code available on Github at <a href="https://github.com/BVLC/caffe">BVLC/caffe</a>
 
