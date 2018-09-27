@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7FCEC7F-33E1-49DD-A4B0-D5FC222250AD}</ProjectGuid>
+    <RootNamespace>Stella</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)atari_win64\ale_interface\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)atari_win64\ale_interface\obj\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)atari_win64\ale_interface\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)atari_win64\ale_interface\obj\$(Platform)\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(ProjectDir)\SDL\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\SDL\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(ProjectDir)\SDL\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\SDL\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>$(ProjectDir)\SDL\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\SDL\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LibraryPath>$(ProjectDir)\SDL\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\SDL\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\yacc;..\emucore;..\emucore\tia;..\emucore\tia\frame-manager;..\common;..\common\tv_filters;..\gui;..\debugger\gui;..\debugger;..\windows;..\cheat;..\zlib;..\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BSPF_WINDOWS;WIN32;NDEBUG;JOYSTICK_SUPPORT;DEBUGGER_SUPPORT;WINDOWED_SUPPORT;SOUND_SUPPORT;CHEATCODE_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4100;4127;4146;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)Stella.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Stella.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\emucore;..\emucore\m6502\src;..\emucore\m6502\src\bspf\src;..\common;..\windows;..\zlib;..\external;..\windows\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BSPF_WINDOWS;WIN32;NDEBUG;JOYSTICK_SUPPORT;WINDOWED_SUPPORT;SOUND_SUPPORT;_USRDLL;__USE_SDL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4100;4127;4146;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)SDL\lib\$(Platform)\SDL.dll $(SolutionDir)atari_win64\ale_interface\bin\$(Platform)\$(Configuration)\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\yacc;..\emucore;..\emucore\tia;..\emucore\tia\frame-manager;..\common;..\common\tv_filters;..\gui;..\debugger\gui;..\debugger;..\windows;..\cheat;..\zlib;..\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BSPF_WINDOWS;WIN32;NDEBUG;JOYSTICK_SUPPORT;DEBUGGER_SUPPORT;WINDOWED_SUPPORT;SOUND_SUPPORT;CHEATCODE_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4100;4127;4146;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)Stella.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\emucore;..\emucore\m6502\src;..\emucore\m6502\src\bspf\src;..\common;..\windows;..\zlib;..\external;..\windows\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>BSPF_WINDOWS;WIN32;NDEBUG;JOYSTICK_SUPPORT;WINDOWED_SUPPORT;SOUND_SUPPORT;_USRDLL;__USE_SDL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4100;4127;4146;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)SDL\lib\$(Platform)\SDL.dll $(SolutionDir)atari_win64\ale_interface\bin\$(Platform)\$(Configuration)\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\ColourPalette.cpp" />
+    <ClCompile Include="..\common\Constants.cpp" />
+    <ClCompile Include="..\common\display_screen.cpp" />
+    <ClCompile Include="..\common\Log.cpp" />
+    <ClCompile Include="..\common\ScreenExporter.cpp" />
+    <ClCompile Include="..\common\SoundExporter.cpp" />
+    <ClCompile Include="..\common\SoundNull.cxx" />
+    <ClCompile Include="..\common\SoundSDL.cxx" />
+    <ClCompile Include="..\controllers\ale_controller.cpp" />
+    <ClCompile Include="..\controllers\fifo_controller.cpp" />
+    <ClCompile Include="..\controllers\rlglue_controller.cpp" />
+    <ClCompile Include="..\dllmain.cpp" />
+    <ClCompile Include="..\emucore\AtariVox.cxx" />
+    <ClCompile Include="..\emucore\Booster.cxx" />
+    <ClCompile Include="..\emucore\Cart.cxx" />
+    <ClCompile Include="..\emucore\Cart2K.cxx" />
+    <ClCompile Include="..\emucore\Cart3E.cxx" />
+    <ClCompile Include="..\emucore\Cart3F.cxx" />
+    <ClCompile Include="..\emucore\Cart4A50.cxx" />
+    <ClCompile Include="..\emucore\Cart4K.cxx" />
+    <ClCompile Include="..\emucore\Cart0840.cxx" />
+    <ClCompile Include="..\emucore\CartAR.cxx" />
+    <ClCompile Include="..\emucore\CartCV.cxx" />
+    <ClCompile Include="..\emucore\CartDPC.cxx" />
+    <ClCompile Include="..\emucore\CartE0.cxx" />
+    <ClCompile Include="..\emucore\CartE7.cxx" />
+    <ClCompile Include="..\emucore\CartF4.cxx" />
+    <ClCompile Include="..\emucore\CartF4SC.cxx" />
+    <ClCompile Include="..\emucore\CartF6.cxx" />
+    <ClCompile Include="..\emucore\CartF6SC.cxx" />
+    <ClCompile Include="..\emucore\CartF8.cxx" />
+    <ClCompile Include="..\emucore\CartF8SC.cxx" />
+    <ClCompile Include="..\emucore\CartFASC.cxx" />
+    <ClCompile Include="..\emucore\CartFE.cxx" />
+    <ClCompile Include="..\emucore\CartMB.cxx" />
+    <ClCompile Include="..\emucore\CartMC.cxx" />
+    <ClCompile Include="..\emucore\CartUA.cxx" />
+    <ClCompile Include="..\emucore\Console.cxx" />
+    <ClCompile Include="..\emucore\Control.cxx" />
+    <ClCompile Include="..\emucore\Deserializer.cxx" />
+    <ClCompile Include="..\emucore\Driving.cxx" />
+    <ClCompile Include="..\emucore\Event.cxx" />
+    <ClCompile Include="..\emucore\FSNode.cxx" />
+    <ClCompile Include="..\emucore\Joystick.cxx" />
+    <ClCompile Include="..\emucore\Keyboard.cxx" />
+    <ClCompile Include="..\emucore\m6502\src\Device.cxx" />
+    <ClCompile Include="..\emucore\m6502\src\M6502.cxx" />
+    <ClCompile Include="..\emucore\m6502\src\M6502Hi.cxx" />
+    <ClCompile Include="..\emucore\m6502\src\M6502Low.cxx" />
+    <ClCompile Include="..\emucore\m6502\src\NullDev.cxx" />
+    <ClCompile Include="..\emucore\m6502\src\System.cxx" />
+    <ClCompile Include="..\emucore\M6532.cxx" />
+    <ClCompile Include="..\emucore\MD5.cxx" />
+    <ClCompile Include="..\emucore\MediaSrc.cxx" />
+    <ClCompile Include="..\emucore\OSystem.cxx" />
+    <ClCompile Include="..\emucore\Paddles.cxx" />
+    <ClCompile Include="..\emucore\Props.cxx" />
+    <ClCompile Include="..\emucore\PropsSet.cxx" />
+    <ClCompile Include="..\emucore\Random.cxx" />
+    <ClCompile Include="..\emucore\Serializer.cxx" />
+    <ClCompile Include="..\emucore\Settings.cxx" />
+    <ClCompile Include="..\emucore\SpeakJet.cxx" />
+    <ClCompile Include="..\emucore\Switches.cxx" />
+    <ClCompile Include="..\emucore\TIA.cxx" />
+    <ClCompile Include="..\emucore\TIASnd.cxx" />
+    <ClCompile Include="..\emucore\unzip.c" />
+    <ClCompile Include="..\environment\ale_state.cpp" />
+    <ClCompile Include="..\environment\phosphor_blend.cpp" />
+    <ClCompile Include="..\environment\stella_environment.cpp" />
+    <ClCompile Include="..\external\TinyMT\tinymt32.c" />
+    <ClCompile Include="..\games\Roms.cpp" />
+    <ClCompile Include="..\games\RomSettings.cpp" />
+    <ClCompile Include="..\games\RomUtils.cpp" />
+    <ClCompile Include="..\games\supported\Adventure.cpp" />
+    <ClCompile Include="..\games\supported\AirRaid.cpp" />
+    <ClCompile Include="..\games\supported\Alien.cpp" />
+    <ClCompile Include="..\games\supported\Amidar.cpp" />
+    <ClCompile Include="..\games\supported\Assault.cpp" />
+    <ClCompile Include="..\games\supported\Asterix.cpp" />
+    <ClCompile Include="..\games\supported\Asteroids.cpp" />
+    <ClCompile Include="..\games\supported\Atlantis.cpp" />
+    <ClCompile Include="..\games\supported\BankHeist.cpp" />
+    <ClCompile Include="..\games\supported\BattleZone.cpp" />
+    <ClCompile Include="..\games\supported\BeamRider.cpp" />
+    <ClCompile Include="..\games\supported\Berzerk.cpp" />
+    <ClCompile Include="..\games\supported\Bowling.cpp" />
+    <ClCompile Include="..\games\supported\Boxing.cpp" />
+    <ClCompile Include="..\games\supported\Breakout.cpp" />
+    <ClCompile Include="..\games\supported\Carnival.cpp" />
+    <ClCompile Include="..\games\supported\Centipede.cpp" />
+    <ClCompile Include="..\games\supported\ChopperCommand.cpp" />
+    <ClCompile Include="..\games\supported\CrazyClimber.cpp" />
+    <ClCompile Include="..\games\supported\Defender.cpp" />
+    <ClCompile Include="..\games\supported\DemonAttack.cpp" />
+    <ClCompile Include="..\games\supported\DoubleDunk.cpp" />
+    <ClCompile Include="..\games\supported\ElevatorAction.cpp" />
+    <ClCompile Include="..\games\supported\Enduro.cpp" />
+    <ClCompile Include="..\games\supported\FishingDerby.cpp" />
+    <ClCompile Include="..\games\supported\Freeway.cpp" />
+    <ClCompile Include="..\games\supported\Frostbite.cpp" />
+    <ClCompile Include="..\games\supported\Gopher.cpp" />
+    <ClCompile Include="..\games\supported\Gravitar.cpp" />
+    <ClCompile Include="..\games\supported\Hero.cpp" />
+    <ClCompile Include="..\games\supported\IceHockey.cpp" />
+    <ClCompile Include="..\games\supported\JamesBond.cpp" />
+    <ClCompile Include="..\games\supported\JourneyEscape.cpp" />
+    <ClCompile Include="..\games\supported\Kaboom.cpp" />
+    <ClCompile Include="..\games\supported\Kangaroo.cpp" />
+    <ClCompile Include="..\games\supported\Krull.cpp" />
+    <ClCompile Include="..\games\supported\KungFuMaster.cpp" />
+    <ClCompile Include="..\games\supported\MontezumaRevenge.cpp" />
+    <ClCompile Include="..\games\supported\MsPacman.cpp" />
+    <ClCompile Include="..\games\supported\NameThisGame.cpp" />
+    <ClCompile Include="..\games\supported\Phoenix.cpp" />
+    <ClCompile Include="..\games\supported\Pitfall.cpp" />
+    <ClCompile Include="..\games\supported\Pong.cpp" />
+    <ClCompile Include="..\games\supported\Pooyan.cpp" />
+    <ClCompile Include="..\games\supported\PrivateEye.cpp" />
+    <ClCompile Include="..\games\supported\QBert.cpp" />
+    <ClCompile Include="..\games\supported\RiverRaid.cpp" />
+    <ClCompile Include="..\games\supported\RoadRunner.cpp" />
+    <ClCompile Include="..\games\supported\RoboTank.cpp" />
+    <ClCompile Include="..\games\supported\Seaquest.cpp" />
+    <ClCompile Include="..\games\supported\Skiing.cpp" />
+    <ClCompile Include="..\games\supported\Solaris.cpp" />
+    <ClCompile Include="..\games\supported\SpaceInvaders.cpp" />
+    <ClCompile Include="..\games\supported\StarGunner.cpp" />
+    <ClCompile Include="..\games\supported\Tennis.cpp" />
+    <ClCompile Include="..\games\supported\TimePilot.cpp" />
+    <ClCompile Include="..\games\supported\Tutankham.cpp" />
+    <ClCompile Include="..\games\supported\UpNDown.cpp" />
+    <ClCompile Include="..\games\supported\Venture.cpp" />
+    <ClCompile Include="..\games\supported\VideoPinball.cpp" />
+    <ClCompile Include="..\games\supported\WizardOfWor.cpp" />
+    <ClCompile Include="..\games\supported\YarsRevenge.cpp" />
+    <ClCompile Include="..\games\supported\Zaxxon.cpp" />
+    <ClCompile Include="..\os_dependent\FSNodeWin32.cxx" />
+    <ClCompile Include="..\os_dependent\OSystemWin32.cxx" />
+    <ClCompile Include="..\os_dependent\SettingsWin32.cxx" />
+    <ClCompile Include="..\ale_interface.cpp" />
+    <ClCompile Include="..\stdafx.cpp" />
+    <ClCompile Include="..\zlib\adler32.c" />
+    <ClCompile Include="..\zlib\compress.c" />
+    <ClCompile Include="..\zlib\crc32.c" />
+    <ClCompile Include="..\zlib\deflate.c" />
+    <ClCompile Include="..\zlib\gzclose.c" />
+    <ClCompile Include="..\zlib\gzlib.c" />
+    <ClCompile Include="..\zlib\gzread.c" />
+    <ClCompile Include="..\zlib\gzwrite.c" />
+    <ClCompile Include="..\zlib\infback.c" />
+    <ClCompile Include="..\zlib\inffast.c" />
+    <ClCompile Include="..\zlib\inflate.c" />
+    <ClCompile Include="..\zlib\inftrees.c" />
+    <ClCompile Include="..\zlib\trees.c" />
+    <ClCompile Include="..\zlib\uncompr.c" />
+    <ClCompile Include="..\zlib\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\ColourPalette.hpp" />
+    <ClInclude Include="..\common\Constants.h" />
+    <ClInclude Include="..\common\display_screen.h" />
+    <ClInclude Include="..\common\Log.hpp" />
+    <ClInclude Include="..\common\ScreenExporter.hpp" />
+    <ClInclude Include="..\common\SoundExporter.hpp" />
+    <ClInclude Include="..\common\SoundNull.hxx" />
+    <ClInclude Include="..\common\SoundSDL.hxx" />
+    <ClInclude Include="..\controllers\ale_controller.hpp" />
+    <ClInclude Include="..\controllers\fifo_controller.hpp" />
+    <ClInclude Include="..\controllers\rlglue_controller.hpp" />
+    <ClInclude Include="..\emucore\AtariVox.hxx" />
+    <ClInclude Include="..\emucore\Booster.hxx" />
+    <ClInclude Include="..\emucore\Cart.hxx" />
+    <ClInclude Include="..\emucore\Cart2K.hxx" />
+    <ClInclude Include="..\emucore\Cart3E.hxx" />
+    <ClInclude Include="..\emucore\Cart3F.hxx" />
+    <ClInclude Include="..\emucore\Cart4A50.hxx" />
+    <ClInclude Include="..\emucore\Cart4K.hxx" />
+    <ClInclude Include="..\emucore\Cart0840.hxx" />
+    <ClInclude Include="..\emucore\CartAR.hxx" />
+    <ClInclude Include="..\emucore\CartCV.hxx" />
+    <ClInclude Include="..\emucore\CartDPC.hxx" />
+    <ClInclude Include="..\emucore\CartE0.hxx" />
+    <ClInclude Include="..\emucore\CartE7.hxx" />
+    <ClInclude Include="..\emucore\CartF4.hxx" />
+    <ClInclude Include="..\emucore\CartF4SC.hxx" />
+    <ClInclude Include="..\emucore\CartF6.hxx" />
+    <ClInclude Include="..\emucore\CartF6SC.hxx" />
+    <ClInclude Include="..\emucore\CartF8.hxx" />
+    <ClInclude Include="..\emucore\CartF8SC.hxx" />
+    <ClInclude Include="..\emucore\CartFASC.hxx" />
+    <ClInclude Include="..\emucore\CartFE.hxx" />
+    <ClInclude Include="..\emucore\CartMB.hxx" />
+    <ClInclude Include="..\emucore\CartMC.hxx" />
+    <ClInclude Include="..\emucore\CartUA.hxx" />
+    <ClInclude Include="..\emucore\Console.hxx" />
+    <ClInclude Include="..\emucore\Control.hxx" />
+    <ClInclude Include="..\emucore\DefProps.hxx" />
+    <ClInclude Include="..\emucore\Deserializer.hxx" />
+    <ClInclude Include="..\emucore\Driving.hxx" />
+    <ClInclude Include="..\emucore\Event.hxx" />
+    <ClInclude Include="..\emucore\FSNode.hxx" />
+    <ClInclude Include="..\emucore\Joystick.hxx" />
+    <ClInclude Include="..\emucore\Keyboard.hxx" />
+    <ClInclude Include="..\emucore\m6502\src\Device.hxx" />
+    <ClInclude Include="..\emucore\m6502\src\M6502.hxx" />
+    <ClInclude Include="..\emucore\m6502\src\M6502Hi.hxx" />
+    <ClInclude Include="..\emucore\m6502\src\M6502Low.hxx" />
+    <ClInclude Include="..\emucore\m6502\src\NullDev.hxx" />
+    <ClInclude Include="..\emucore\m6502\src\System.hxx" />
+    <ClInclude Include="..\emucore\M6532.hxx" />
+    <ClInclude Include="..\emucore\MD5.hxx" />
+    <ClInclude Include="..\emucore\MediaSrc.hxx" />
+    <ClInclude Include="..\emucore\OSystem.hxx" />
+    <ClInclude Include="..\emucore\Paddles.hxx" />
+    <ClInclude Include="..\emucore\Props.hxx" />
+    <ClInclude Include="..\emucore\PropsSet.hxx" />
+    <ClInclude Include="..\emucore\Random.hxx" />
+    <ClInclude Include="..\emucore\Serializer.hxx" />
+    <ClInclude Include="..\emucore\Settings.hxx" />
+    <ClInclude Include="..\emucore\Sound.hxx" />
+    <ClInclude Include="..\emucore\SpeakJet.hxx" />
+    <ClInclude Include="..\emucore\Switches.hxx" />
+    <ClInclude Include="..\emucore\TIA.hxx" />
+    <ClInclude Include="..\emucore\TIASnd.hxx" />
+    <ClInclude Include="..\emucore\unzip.h" />
+    <ClInclude Include="..\environment\ale_state.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\environment\phosphor_blend.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\environment\stella_environment.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\external\TinyMT\tinymt32.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\Roms.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\RomSettings.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\RomUtils.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Asteroids.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Atlantis.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\BankHeist.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\BattleZone.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\BeamRider.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Berzerk.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Bowling.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Boxing.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Breakout.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Carnival.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Centipede.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\ChopperCommand.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\CrazyClimber.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Defender.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\DemonAttack.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\DoubleDunk.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\ElevatorAction.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Enduro.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\FishingDerby.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Freeway.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Frostbite.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Gopher.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Gravitar.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Hero.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\IceHockey.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\JamesBond.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\JourneyEscape.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Kaboom.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Kangaroo.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Krull.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\KungFuMaster.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\MontezumaRevenge.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\MsPacman.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\NameThisGame.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Phoenix.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Pitfall.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Pong.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Pooyan.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\PrivateEye.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\QBert.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\RiverRaid.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\RoadRunner.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\RoboTank.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Seaquest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Skiing.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Solaris.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\SpaceInvaders.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\StarGunner.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Tennis.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\TimePilot.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Tutankham.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\UpNDown.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Venture.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\VideoPinball.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\WizardOfWor.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\YarsRevenge.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Zaxxon.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\os_dependent\OSystemWin32.hxx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\os_dependent\SettingsWin32.hxx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\ale_interface.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\stdafx.h" />
+    <ClInclude Include="..\targetver.h" />
+    <ClInclude Include="..\zlib\crc32.h" />
+    <ClInclude Include="..\zlib\deflate.h" />
+    <ClInclude Include="..\zlib\gzguts.h" />
+    <ClInclude Include="..\zlib\inffast.h" />
+    <ClInclude Include="..\zlib\inffixed.h" />
+    <ClInclude Include="..\zlib\inflate.h" />
+    <ClInclude Include="..\zlib\inftrees.h" />
+    <ClInclude Include="..\zlib\trees.h" />
+    <ClInclude Include="..\zlib\zconf.h" />
+    <ClInclude Include="..\zlib\zlib.h" />
+    <ClInclude Include="..\zlib\zutil.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\Array.hxx" />
+    <ClInclude Include="..\common\misc_tools.h" />
+    <ClInclude Include="..\common\Palettes.hpp" />
+    <ClInclude Include="..\common\Version.hxx" />
+    <ClInclude Include="..\common\VideoModeList.hxx" />
+    <ClInclude Include="..\environment\ale_ram.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\environment\ale_screen.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Adventure.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\AirRaid.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Alien.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Amidar.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Assault.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\games\supported\Asterix.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
