@@ -281,6 +281,7 @@
     </Link>
     <PostBuildEvent>
       <Command>tlbimp $(TargetPath) /keyfile:$(ProjectDir)AleControl.pfx /primary /machine:Agnostic /out:$(TargetDir)AleControlLib.dll
+if not exist $(SolutionDir)AleTestApp\_references md $(SolutionDir)AleTestApp\_references
 copy $(TargetDir)AleControlLib.dll $(SolutionDir)AleTestApp\_references
 copy $(TargetDir)$(TargetName).dll $(SolutionDir)AleTestApp\bin\$(Configuration)
 copy $(TargetDir)$(TargetName).pdb $(SolutionDir)AleTestApp\bin\$(Configuration)
