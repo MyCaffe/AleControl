@@ -17,6 +17,15 @@
       <UniqueIdentifier>{d0c97a74-fa64-411a-b21b-00329c88a74c}</UniqueIdentifier>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="x64">
+      <UniqueIdentifier>{9a97541f-ce81-460b-ad95-d7dc8049f5d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x64\Release">
+      <UniqueIdentifier>{3472c99e-059c-4543-8715-302cb1e54e4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x64\Debug">
+      <UniqueIdentifier>{4899e64e-e58a-4639-8900-c96af867ca6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dlldatax.c">
@@ -47,6 +56,12 @@
     </None>
     <None Include="ALE.rgs">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="x64\Release\SDL.dll">
+      <Filter>x64\Release</Filter>
+    </None>
+    <None Include="x64\Debug\SDL.dll">
+      <Filter>x64\Debug</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -619,6 +619,8 @@ copy $(SolutionDir)atari_win64\ale_interface\bin\$(Platform)\$(Configuration)\SD
     </CustomBuild>
     <None Include="AleControl.rgs" />
     <None Include="ALE.rgs" />
+    <None Include="x64\Debug\SDL.dll" />
+    <None Include="x64\Release\SDL.dll" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="AleControl.idl" />
