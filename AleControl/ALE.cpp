@@ -535,7 +535,6 @@ STDMETHODIMP CALE::GetScreenDimensions(float* pfWid, float* pfHt)
 	return S_OK;
 }
 
-
 STDMETHODIMP CALE::get_EnableRestrictedActionSet(VARIANT_BOOL* pbEnable)
 {
 	TRY
@@ -636,7 +635,6 @@ STDMETHODIMP CALE::put_EnableColorData(VARIANT_BOOL bEnable)
 	return S_OK;
 }
 
-
 STDMETHODIMP CALE::get_EnableColorAveraging(VARIANT_BOOL* pbEnable)
 {
 	TRY
@@ -687,7 +685,6 @@ STDMETHODIMP CALE::put_EnableColorAveraging(VARIANT_BOOL bEnable)
 	return S_OK;
 }
 
-
 STDMETHODIMP CALE::Shutdown()
 {
 	TRY
@@ -710,7 +707,6 @@ STDMETHODIMP CALE::Shutdown()
 	return S_OK;
 }
 
-
 STDMETHODIMP CALE::Initialize()
 {
 	TRY
@@ -727,7 +723,6 @@ STDMETHODIMP CALE::Initialize()
 
 	return S_OK;
 }
-
 
 STDMETHODIMP CALE::get_LegalActionSpace(SAFEARRAY** rgActions)
 {
@@ -782,7 +777,6 @@ STDMETHODIMP CALE::get_LegalActionSpace(SAFEARRAY** rgActions)
 		return S_OK;
 }
 
-
 STDMETHODIMP CALE::get_MinimalActionSpace(SAFEARRAY** rgActions)
 {
 	HRESULT hr;
@@ -835,3 +829,64 @@ STDMETHODIMP CALE::get_MinimalActionSpace(SAFEARRAY** rgActions)
 
 		return S_OK;
 }
+
+STDMETHODIMP CALE::GetRAMData(SAFEARRAY** rgData)
+{
+	HRESULT hr;
+	SAFEARRAY* rgOutput = NULL;
+
+	TRY
+	{
+		if (m_pale == NULL)
+			AfxThrowOleDispatchException(0, _T("You must call Initialize first!"));
+
+		ALERAM ram = m_pale->getRAM();
+		int nSize = ram.size();
+
+		rgOutput = SafeArrayCreateVector(VT_UI1, 0, nSize);
+		if (rgOutput == NULL)
+			AfxThrowMemoryException();
+
+		byte* rgRawData;
+		hr = SafeArrayAccessData(rgOutput, (void**)&rgRawData);
+		if (FAILED(hr))
+			AfxThrowOleException(hr);
+
+		for (int i = 0; i < nSize; i++)
+		{
+			rgRawData[i] = (byte)ram.byte((unsigned int)i);
+		}
+
+		hr = SafeArrayUnaccessData(rgOutput);
+		if (FAILED(hr))
+			AfxThrowOleException(hr);
+
+		*rgData = rgOutput;
+		rgOutput = NULL;
+	}
+	CATCH(COleDispatchException, e)
+	{
+		if (rgOutput != NULL)
+		{
+			SafeArrayDestroy(rgOutput);
+			rgOutput = NULL;
+		}
+
+		return Error(e->m_strDescription, IID_IALE, e->m_scError);
+	}
+	CATCH_ALL(e)
+	{
+		if (rgOutput != NULL)
+		{
+			SafeArrayDestroy(rgOutput);
+			rgOutput = NULL;
+		}
+
+		return Error("Failed to call GetRAMData", IID_IALE, COleException::Process(e));
+	}
+	END_CATCH_ALL
+
+	return S_OK;
+}
+
+

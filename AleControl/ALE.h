@@ -95,6 +95,7 @@ public:
 	STDMETHOD(Initialize)();
 	STDMETHOD(get_LegalActionSpace)(SAFEARRAY** rgActions);
 	STDMETHOD(get_MinimalActionSpace)(SAFEARRAY** rgActions);
+	STDMETHOD(GetRAMData)(SAFEARRAY** rgData);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(ALE), CALE)

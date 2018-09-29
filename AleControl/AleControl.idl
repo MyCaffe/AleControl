@@ -145,6 +145,9 @@ interface IALE : IDispatch{
 
 	[id(19), propget, helpstring("property get_MinimalActionSpace")]
 	HRESULT MinimalActionSpace([out, retval] SAFEARRAY(ACTION) *rgActions);
+
+	[id(20), helpstring("method GetRAM")]
+	HRESULT GetRAMData([out, retval] SAFEARRAY(byte) *rgData);
 };
 
 [
