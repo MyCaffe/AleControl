@@ -57,8 +57,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,10,0,190
- PRODUCTVERSION 0,10,0,190
+ FILEVERSION 0,10,1,21
+ PRODUCTVERSION 0,10,1,21
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -75,12 +75,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "SignalPOP LLC"
             VALUE "FileDescription", "ALE Control used by .Net applications to communicate with the ALE (https://github.com/mgbellemare/Arcade-Learning-Environment)."
-            VALUE "FileVersion", "0.10.0.190"
+            VALUE "FileVersion", "0.10.1.21"
             VALUE "InternalName", "AleControl.dll"
             VALUE "LegalCopyright", "Copyright (C) SignalPOP 2018"
             VALUE "OriginalFilename", "AleControl.dll"
             VALUE "ProductName", "ALE"
-            VALUE "ProductVersion", "0.10.0.190"
+            VALUE "ProductVersion", "0.10.1.21"
         END
     END
     BLOCK "VarFileInfo"
