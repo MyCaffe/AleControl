@@ -22,6 +22,9 @@ namespace AleTestApp
         AutoResetEvent m_evtDone = new AutoResetEvent(false);
         ACTION m_action = ACTION.ACT_PLAYER_A_NOOP;
         bool m_bShowDisplay = false;
+        bool m_bTerminateOnRallyEnd = false;
+        bool m_bAllowNegativeRewards = false;
+        string m_strError = null;
 
         delegate void fnUpdate(COLORTYPE ct, byte[] rg, int nWid, int nHt, float fTotalReward);
 
@@ -57,6 +60,9 @@ namespace AleTestApp
         {
             btnStart.Enabled = false;
             m_bShowDisplay = chkShowDisplay.Checked;
+            m_bTerminateOnRallyEnd = chkTerminateOnRallyEnd.Checked;
+            m_bAllowNegativeRewards = chkAllowNegativeRewards.Checked;
+            m_strError = "";
             m_taskProcess = Task.Factory.StartNew(new Action<object>(process), edtGameRomPath.Text);
         }
 
@@ -65,50 +71,61 @@ namespace AleTestApp
             string strRom = (string)arg;
             IALE ale = new ALE();
 
-            ale.Initialize();
-            ale.EnableDisplayScreen = m_bShowDisplay;
-            ale.EnableSound = m_bShowDisplay;
-            ale.EnableColorData = true;
-            ale.EnableRestrictedActionSet = true;
-            ale.EnableColorAveraging = true;
-            ale.RandomSeed = 123;
-            ale.RepeatActionProbability = 0.25f;
-            ale.Load(strRom);
-            ACTION[] rgActions = ale.ActionSpace;
-            Random rand = new Random();
-            int nEpisode = 0;
-            float fWid;
-            float fHt;
-            float fTotalReward = 0;
-
-            ale.GetScreenDimensions(out fWid, out fHt);
-
-            while (nEpisode < 10 && !m_evtAbort.WaitOne(0))
+            try
             {
-                if (m_action == ACTION.ACT_RESET)
+                ale.Initialize();
+                ale.EnableDisplayScreen = m_bShowDisplay;
+                ale.EnableSound = m_bShowDisplay;
+                ale.EnableColorData = true;
+                ale.EnableRestrictedActionSet = true;
+                ale.EnableColorAveraging = true;
+                ale.EnableTerminateOnRallyEnd = m_bTerminateOnRallyEnd;
+                ale.AllowNegativeRewards = m_bAllowNegativeRewards;
+                ale.RandomSeed = 123;
+                ale.RepeatActionProbability = 0.25f;
+                ale.Load(strRom);
+                ACTION[] rgActions = ale.ActionSpace;
+                Random rand = new Random();
+                int nEpisode = 0;
+                float fWid;
+                float fHt;
+                float fTotalReward = 0;
+
+                ale.GetScreenDimensions(out fWid, out fHt);
+
+                while (nEpisode < 10 && !m_evtAbort.WaitOne(0))
                 {
-                    ale.ResetGame();
-                    fTotalReward = 0;
-                }
-                else
-                {
-                    ACTION action = ACTION.ACT_PLAYER_A_NOOP;
-
-                    if (rgActions.Contains(m_action))
-                        action = m_action;
-
-                    fTotalReward += ale.Act(action);
-                    byte[] rgScreen = ale.GetScreenData(m_ct);
-
-                    Invoke(new fnUpdate(update), m_ct, rgScreen, (int)fWid, (int)fHt, fTotalReward);
-
-                    if (ale.GameOver)
+                    if (m_action == ACTION.ACT_RESET)
                     {
                         ale.ResetGame();
-                        nEpisode++;
                         fTotalReward = 0;
                     }
+                    else
+                    {
+                        ACTION action = ACTION.ACT_PLAYER_A_NOOP;
+
+                        if (rgActions.Contains(m_action))
+                            action = m_action;
+
+                        float fReward = ale.Act(action);
+                        fTotalReward += fReward;
+
+                        byte[] rgScreen = ale.GetScreenData(m_ct);
+
+                        Invoke(new fnUpdate(update), m_ct, rgScreen, (int)fWid, (int)fHt, fTotalReward);
+
+                        if (ale.GameOver)
+                        {
+                            ale.ResetGame();
+                            nEpisode++;
+                            fTotalReward = 0;
+                        }
+                    }
                 }
+            }
+            catch (Exception excpt)
+            {
+                m_strError = "ERROR: " + excpt.Message;
             }
 
             ale.Shutdown();
@@ -165,6 +182,13 @@ namespace AleTestApp
             btnDown.Enabled = bRunning;
             btnFire.Enabled = bRunning;
             grpControls.Enabled = bRunning;
+            chkShowDisplay.Enabled = !bRunning;
+            chkTerminateOnRallyEnd.Enabled = !bRunning;
+            chkAllowNegativeRewards.Enabled = !bRunning;
+            radColor.Enabled = !bRunning;
+            radGray.Enabled = !bRunning;
+
+            tsStatus.Text = m_strError;
         }
 
         private void btnBrowseRom_Click(object sender, EventArgs e)

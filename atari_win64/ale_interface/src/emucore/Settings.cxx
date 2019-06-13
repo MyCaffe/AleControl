@@ -709,6 +709,8 @@ void Settings::setDefaultSettings() {
     intSettings.insert(pair<string, int>("frame_skip", 1));
     floatSettings.insert(pair<string, float>("repeat_action_probability", 0.25));
     stringSettings.insert(pair<string, string>("rom_file", ""));
+	boolSettings.insert(pair<string, bool>("terminate_on_rally_end", false));
+	boolSettings.insert(pair<string, bool>("allow_negative_rewards", false));
 
     // Record settings
     intSettings.insert(pair<string, int>("fragsize", 64)); // fragsize to 64 ensures proper sound sync

@@ -50,6 +50,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsReward = new System.Windows.Forms.ToolStripStatusLabel();
             this.chkShowDisplay = new System.Windows.Forms.CheckBox();
+            this.chkTerminateOnRallyEnd = new System.Windows.Forms.CheckBox();
+            this.tsStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.chkAllowNegativeRewards = new System.Windows.Forms.CheckBox();
             this.grpControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGame)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -233,8 +236,9 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsReward});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 265);
+            this.tsReward,
+            this.tsStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 304);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(515, 22);
             this.statusStrip1.TabIndex = 8;
@@ -257,11 +261,40 @@
             this.chkShowDisplay.UseVisualStyleBackColor = true;
             this.chkShowDisplay.CheckedChanged += new System.EventHandler(this.chkShowDisplay_CheckedChanged);
             // 
+            // chkTerminateOnRallyEnd
+            // 
+            this.chkTerminateOnRallyEnd.AutoSize = true;
+            this.chkTerminateOnRallyEnd.Location = new System.Drawing.Point(120, 255);
+            this.chkTerminateOnRallyEnd.Name = "chkTerminateOnRallyEnd";
+            this.chkTerminateOnRallyEnd.Size = new System.Drawing.Size(136, 17);
+            this.chkTerminateOnRallyEnd.TabIndex = 9;
+            this.chkTerminateOnRallyEnd.Text = "Terminate on Rally End";
+            this.chkTerminateOnRallyEnd.UseVisualStyleBackColor = true;
+            this.chkTerminateOnRallyEnd.CheckedChanged += new System.EventHandler(this.chkShowDisplay_CheckedChanged);
+            // 
+            // tsStatus
+            // 
+            this.tsStatus.Name = "tsStatus";
+            this.tsStatus.Size = new System.Drawing.Size(0, 17);
+            // 
+            // chkAllowNegativeRewards
+            // 
+            this.chkAllowNegativeRewards.AutoSize = true;
+            this.chkAllowNegativeRewards.Location = new System.Drawing.Point(120, 278);
+            this.chkAllowNegativeRewards.Name = "chkAllowNegativeRewards";
+            this.chkAllowNegativeRewards.Size = new System.Drawing.Size(129, 17);
+            this.chkAllowNegativeRewards.TabIndex = 9;
+            this.chkAllowNegativeRewards.Text = "Allow negtive rewards";
+            this.chkAllowNegativeRewards.UseVisualStyleBackColor = true;
+            this.chkAllowNegativeRewards.CheckedChanged += new System.EventHandler(this.chkShowDisplay_CheckedChanged);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 287);
+            this.ClientSize = new System.Drawing.Size(515, 326);
+            this.Controls.Add(this.chkAllowNegativeRewards);
+            this.Controls.Add(this.chkTerminateOnRallyEnd);
             this.Controls.Add(this.chkShowDisplay);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.radGray);
@@ -310,6 +343,9 @@
         private System.Windows.Forms.ToolStripStatusLabel tsReward;
         private System.Windows.Forms.Button btnFire;
         private System.Windows.Forms.CheckBox chkShowDisplay;
+        private System.Windows.Forms.CheckBox chkTerminateOnRallyEnd;
+        private System.Windows.Forms.ToolStripStatusLabel tsStatus;
+        private System.Windows.Forms.CheckBox chkAllowNegativeRewards;
     }
 }
 

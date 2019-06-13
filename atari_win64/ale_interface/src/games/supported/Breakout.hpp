@@ -67,6 +67,7 @@ class BreakoutSettings : public RomSettings {
         // remaining lives
         const int lives() { return isTerminal() ? 0 : m_lives; }
 
+
     private:
 
         bool m_terminal;
@@ -74,6 +75,8 @@ class BreakoutSettings : public RomSettings {
         reward_t m_reward;
         reward_t m_score;
         int m_lives;
+		bool m_bTerminateOnRallyEnd;
+		bool m_bAllowNegativeRewards;
 };
 
 #endif // __BREAKOUT_HPP__

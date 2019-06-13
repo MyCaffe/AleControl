@@ -29,8 +29,9 @@
 #include "../RomUtils.hpp"
 
 
-BreakoutSettings::BreakoutSettings() {
-
+BreakoutSettings::BreakoutSettings() 
+{
+	m_pSettings = NULL;
     reset();
 }
 
@@ -39,6 +40,7 @@ BreakoutSettings::BreakoutSettings() {
 RomSettings* BreakoutSettings::clone() const { 
     
     RomSettings* rval = new BreakoutSettings();
+	rval->m_pSettings = m_pSettings;
     *rval = *this;
     return rval;
 }
@@ -51,13 +53,22 @@ void BreakoutSettings::step(const System& system) {
     int x = readRam(&system, 77);
     int y = readRam(&system, 76);
     reward_t score = 1 * (x & 0x000F) + 10 * ((x & 0x00F0) >> 4) + 100 * (y & 0x000F);
+
     m_reward = score - m_score;
     m_score = score;
 
     // update terminal status
     int byte_val = readRam(&system, 57);
     if (!m_started && byte_val == 5) m_started = true;
-    m_terminal = m_started && byte_val == 0;
+
+	if (m_bTerminateOnRallyEnd)
+		m_terminal = m_started && byte_val < 5;
+	else
+		m_terminal = m_started && byte_val == 0;
+
+	if (m_lives != byte_val && m_reward == 0 && m_bAllowNegativeRewards)
+		m_reward = -1;
+
     m_lives = byte_val;
 }
 
@@ -99,6 +110,14 @@ void BreakoutSettings::reset() {
     m_lives    = 5;
     m_terminal = false;
     m_started  = false;
+	m_bTerminateOnRallyEnd = false;
+	m_bAllowNegativeRewards = false;
+	
+	if (m_pSettings != NULL)
+	{
+		m_bTerminateOnRallyEnd = m_pSettings->getBool("terminate_on_rally_end");
+		m_bAllowNegativeRewards = m_pSettings->getBool("allow_negative_rewards");
+	}
 }
 
         

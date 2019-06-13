@@ -148,6 +148,16 @@ interface IALE : IDispatch{
 
 	[id(20), helpstring("method GetRAM")]
 	HRESULT GetRAMData([out, retval] SAFEARRAY(byte) *rgData);
+
+	[id(21), propput, helpstring("property put_EnableTerminateOnRallyEnd")]
+	HRESULT EnableTerminateOnRallyEnd([in] VARIANT_BOOL bEnable);
+	[id(21), propget, helpstring("property get_EnableTerminateOnRallyEnd")]
+	HRESULT EnableTerminateOnRallyEnd([out, retval] VARIANT_BOOL* pbEnable);
+
+	[id(22), propput, helpstring("property put_AllowNegativeRewards")]
+	HRESULT AllowNegativeRewards([in] VARIANT_BOOL bEnable);
+	[id(22), propget, helpstring("property get_AllowNegativeRewards")]
+	HRESULT AllowNegativeRewards([out, retval] VARIANT_BOOL* pbEnable);
 };
 
 [

@@ -685,6 +685,106 @@ STDMETHODIMP CALE::put_EnableColorAveraging(VARIANT_BOOL bEnable)
 	return S_OK;
 }
 
+STDMETHODIMP CALE::get_EnableTerminateOnRallyEnd(VARIANT_BOOL* pbEnable)
+{
+	TRY
+	{
+		if (m_pale == NULL)
+			AfxThrowOleDispatchException(0, _T("You must call Initialize first!"));
+
+		bool bVal = m_pale->getBool("terminate_on_rally_end");
+		*pbEnable = (bVal) ? VARIANT_TRUE : VARIANT_FALSE;
+	}
+		CATCH(COleDispatchException, e)
+	{
+		return Error(e->m_strDescription, IID_IALE, e->m_scError);
+	}
+	CATCH_ALL(e)
+	{
+		CComBSTR str;
+		str = "Failed to get EnableTerminateOnRallyEnd!";
+		return Error(str, IID_IALE, COleException::Process(e));
+	}
+	END_CATCH_ALL
+
+		return S_OK;
+}
+
+STDMETHODIMP CALE::put_EnableTerminateOnRallyEnd(VARIANT_BOOL bEnable)
+{
+	TRY
+	{
+		if (m_pale == NULL)
+			AfxThrowOleDispatchException(0, _T("You must call Initialize first!"));
+
+		bool bVal = (bEnable == VARIANT_TRUE) ? true : false;
+		m_pale->setBool("terminate_on_rally_end", bVal);
+	}
+		CATCH(COleDispatchException, e)
+	{
+		return Error(e->m_strDescription, IID_IALE, e->m_scError);
+	}
+	CATCH_ALL(e)
+	{
+		CComBSTR str;
+		str = "Failed to set EnableTerminateOnRallyEnd!";
+		return Error(str, IID_IALE, COleException::Process(e));
+	}
+	END_CATCH_ALL
+
+		return S_OK;
+}
+
+STDMETHODIMP CALE::get_AllowNegativeRewards(VARIANT_BOOL* pbEnable)
+{
+	TRY
+	{
+		if (m_pale == NULL)
+			AfxThrowOleDispatchException(0, _T("You must call Initialize first!"));
+
+		bool bVal = m_pale->getBool("allow_negative_rewards");
+		*pbEnable = (bVal) ? VARIANT_TRUE : VARIANT_FALSE;
+	}
+		CATCH(COleDispatchException, e)
+	{
+		return Error(e->m_strDescription, IID_IALE, e->m_scError);
+	}
+	CATCH_ALL(e)
+	{
+		CComBSTR str;
+		str = "Failed to get AllowNegativeRewards!";
+		return Error(str, IID_IALE, COleException::Process(e));
+	}
+	END_CATCH_ALL
+
+		return S_OK;
+}
+
+STDMETHODIMP CALE::put_AllowNegativeRewards(VARIANT_BOOL bEnable)
+{
+	TRY
+	{
+		if (m_pale == NULL)
+			AfxThrowOleDispatchException(0, _T("You must call Initialize first!"));
+
+		bool bVal = (bEnable == VARIANT_TRUE) ? true : false;
+		m_pale->setBool("allow_negative_rewards", bVal);
+	}
+		CATCH(COleDispatchException, e)
+	{
+		return Error(e->m_strDescription, IID_IALE, e->m_scError);
+	}
+	CATCH_ALL(e)
+	{
+		CComBSTR str;
+		str = "Failed to set AllowNegativeRewards!";
+		return Error(str, IID_IALE, COleException::Process(e));
+	}
+	END_CATCH_ALL
+
+		return S_OK;
+}
+
 STDMETHODIMP CALE::Shutdown()
 {
 	TRY

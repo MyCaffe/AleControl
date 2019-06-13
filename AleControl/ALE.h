@@ -91,6 +91,10 @@ public:
 	STDMETHOD(put_EnableColorData)(VARIANT_BOOL bEnable);
 	STDMETHOD(get_EnableColorAveraging)(VARIANT_BOOL* pbEnable);
 	STDMETHOD(put_EnableColorAveraging)(VARIANT_BOOL bEnable);
+	STDMETHOD(get_EnableTerminateOnRallyEnd)(VARIANT_BOOL* pbEnable);
+	STDMETHOD(put_EnableTerminateOnRallyEnd)(VARIANT_BOOL bEnable);
+	STDMETHOD(get_AllowNegativeRewards)(VARIANT_BOOL* pbEnable);
+	STDMETHOD(put_AllowNegativeRewards)(VARIANT_BOOL bEnable);
 	STDMETHOD(Shutdown)();
 	STDMETHOD(Initialize)();
 	STDMETHOD(get_LegalActionSpace)(SAFEARRAY** rgActions);

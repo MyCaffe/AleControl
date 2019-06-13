@@ -36,6 +36,7 @@
 #include "../common/Constants.h"
 #include "../emucore/Serializer.hxx"
 #include "../emucore/Deserializer.hxx"
+#include "../emucore/Settings.hxx"
 
 class System;
 
@@ -86,6 +87,10 @@ struct RomSettings {
     // Returns a list of actions that are required to start the game.
     // By default this is an empty list.
     virtual ActionVect getStartingActions();
+
+	void set(Settings* s) { m_pSettings = s; };
+
+	Settings* m_pSettings;
 };
 
 

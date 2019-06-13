@@ -125,6 +125,7 @@ void ALEInterface::loadROM(string rom_file = "") {
   }
   loadSettings(rom_file, theOSystem);
   romSettings.reset(buildRomRLWrapper(rom_file));
+  romSettings.get()->set(theSettings.get());
   environment.reset(new StellaEnvironment(theOSystem.get(), romSettings.get()));
   max_num_frames = theOSystem->settings().getInt("max_num_frames_per_episode");
   environment->reset();
