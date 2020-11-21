@@ -38,10 +38,14 @@
     <ProjectName>AleControl</ProjectName>
     <ProjectGuid>{7DCBB95D-5C31-4C38-999C-6A9EB10E33B1}</ProjectGuid>
     <RootNamespace>AleControl</RootNamespace>
-    <SccProjectName>SAK</SccProjectName>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
     <Keyword>AtlProj</Keyword>
     <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
