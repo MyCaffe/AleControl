@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,11,6,38
- PRODUCTVERSION 1,11,6,38
+ FILEVERSION 1,11,7,7
+ PRODUCTVERSION 1,11,7,7
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "SignalPop LLC"
             VALUE "FileDescription", "Please see ALE - https://github.com/mgbellemare/Arcade-Learning-Environment and Stella - https://stella-emu.github.io/"
-            VALUE "FileVersion", "1.11.6.38"
+            VALUE "FileVersion", "1.11.7.7"
             VALUE "InternalName", "Arcade-Learning-Envrionment (ALE)"
             VALUE "LegalCopyright", "Copyright (C) 1995-2012 Mott B., Anthony S. and the Stella Team; Copyright (C) 2009-2012 Naddaf Y., Bellemare M., Veness J. and the Artificial Intelligence Laboratory at University of Alberta; Portions Copyright (C) 2018-2021 SignalPop LLC."
             VALUE "OriginalFilename", "ale_interface.dll"
             VALUE "ProductName", "Bundled with ALEControl provided by SignalPop LLC for Windows developers."
-            VALUE "ProductVersion", "1.11.6.38"
+            VALUE "ProductVersion", "1.11.7.7"
         END
     END
     BLOCK "VarFileInfo"
