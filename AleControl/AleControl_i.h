@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0622 */
+ /* File created by MIDL compiler version 8.01.0626 */
 /* at Mon Jan 18 19:14:07 2038
  */
 /* Compiler settings for AleControl.idl:
-    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0622 
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.01.0626 
     protocol : all , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -40,6 +40,14 @@
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
+#endif
+
+#ifndef DECLSPEC_XFGVIRT
+#if _CONTROL_FLOW_GUARD_XFG
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
 #endif
 
 /* Forward Declarations */ 
@@ -262,28 +270,34 @@ EXTERN_C const IID IID_IALE;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IALE * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IALE * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             IALE * This);
         
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
             IALE * This,
             /* [out] */ UINT *pctinfo);
         
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
             IALE * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
             IALE * This,
             /* [in] */ REFIID riid,
@@ -292,6 +306,7 @@ EXTERN_C const IID IID_IALE;
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IALE * This,
             /* [annotation][in] */ 
@@ -311,130 +326,162 @@ EXTERN_C const IID IID_IALE;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
+        DECLSPEC_XFGVIRT(IALE, Load)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Load )( 
             IALE * This,
             /* [in] */ BSTR bstrGameROM);
         
+        DECLSPEC_XFGVIRT(IALE, put_EnableSound)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_EnableSound )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_EnableSound)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_EnableSound )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
         
+        DECLSPEC_XFGVIRT(IALE, put_EnableDisplayScreen)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_EnableDisplayScreen )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_EnableDisplayScreen)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_EnableDisplayScreen )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
         
+        DECLSPEC_XFGVIRT(IALE, put_RandomSeed)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_RandomSeed )( 
             IALE * This,
             /* [in] */ int nSeed);
         
+        DECLSPEC_XFGVIRT(IALE, get_RandomSeed)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_RandomSeed )( 
             IALE * This,
             /* [retval][out] */ int *pnSeed);
         
+        DECLSPEC_XFGVIRT(IALE, put_RepeatActionProbability)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_RepeatActionProbability )( 
             IALE * This,
             /* [in] */ float fProb);
         
+        DECLSPEC_XFGVIRT(IALE, get_RepeatActionProbability)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_RepeatActionProbability )( 
             IALE * This,
             /* [retval][out] */ float *pfProb);
         
+        DECLSPEC_XFGVIRT(IALE, get_ActionSpace)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_ActionSpace )( 
             IALE * This,
             /* [retval][out] */ SAFEARRAY * *rgActions);
         
+        DECLSPEC_XFGVIRT(IALE, get_GameOver)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_GameOver )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbGameOver);
         
+        DECLSPEC_XFGVIRT(IALE, Act)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Act )( 
             IALE * This,
             /* [in] */ ACTION action,
             /* [retval][out] */ float *pfReward);
         
+        DECLSPEC_XFGVIRT(IALE, ResetGame)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *ResetGame )( 
             IALE * This);
         
+        DECLSPEC_XFGVIRT(IALE, put_MaxNumFrames)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_MaxNumFrames )( 
             IALE * This,
             /* [in] */ int nMax);
         
+        DECLSPEC_XFGVIRT(IALE, get_MaxNumFrames)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_MaxNumFrames )( 
             IALE * This,
             /* [retval][out] */ int *pnMax);
         
+        DECLSPEC_XFGVIRT(IALE, GetScreenData)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *GetScreenData )( 
             IALE * This,
             /* [in] */ COLORTYPE clrType,
             /* [retval][out] */ SAFEARRAY * *rgData);
         
+        DECLSPEC_XFGVIRT(IALE, GetScreenDimensions)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *GetScreenDimensions )( 
             IALE * This,
             /* [out] */ float *pfWidth,
             /* [out] */ float *pfHeight);
         
+        DECLSPEC_XFGVIRT(IALE, put_EnableRestrictedActionSet)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_EnableRestrictedActionSet )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_EnableRestrictedActionSet)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_EnableRestrictedActionSet )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
         
+        DECLSPEC_XFGVIRT(IALE, put_EnableColorData)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_EnableColorData )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_EnableColorData)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_EnableColorData )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
         
+        DECLSPEC_XFGVIRT(IALE, put_EnableColorAveraging)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_EnableColorAveraging )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_EnableColorAveraging)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_EnableColorAveraging )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
         
+        DECLSPEC_XFGVIRT(IALE, Shutdown)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Shutdown )( 
             IALE * This);
         
+        DECLSPEC_XFGVIRT(IALE, Initialize)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Initialize )( 
             IALE * This);
         
+        DECLSPEC_XFGVIRT(IALE, get_LegalActionSpace)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_LegalActionSpace )( 
             IALE * This,
             /* [retval][out] */ SAFEARRAY * *rgActions);
         
+        DECLSPEC_XFGVIRT(IALE, get_MinimalActionSpace)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_MinimalActionSpace )( 
             IALE * This,
             /* [retval][out] */ SAFEARRAY * *rgActions);
         
+        DECLSPEC_XFGVIRT(IALE, GetRAMData)
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *GetRAMData )( 
             IALE * This,
             /* [retval][out] */ SAFEARRAY * *rgData);
         
+        DECLSPEC_XFGVIRT(IALE, put_EnableTerminateOnRallyEnd)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_EnableTerminateOnRallyEnd )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_EnableTerminateOnRallyEnd)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_EnableTerminateOnRallyEnd )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
         
+        DECLSPEC_XFGVIRT(IALE, put_AllowNegativeRewards)
         /* [helpstring][propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_AllowNegativeRewards )( 
             IALE * This,
             /* [in] */ VARIANT_BOOL bEnable);
         
+        DECLSPEC_XFGVIRT(IALE, get_AllowNegativeRewards)
         /* [helpstring][propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_AllowNegativeRewards )( 
             IALE * This,
             /* [retval][out] */ VARIANT_BOOL *pbEnable);
@@ -614,28 +661,34 @@ EXTERN_C const IID DIID__IALEEvents;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             _IALEEvents * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             _IALEEvents * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             _IALEEvents * This);
         
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfoCount)
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
             _IALEEvents * This,
             /* [out] */ UINT *pctinfo);
         
+        DECLSPEC_XFGVIRT(IDispatch, GetTypeInfo)
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
             _IALEEvents * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
+        DECLSPEC_XFGVIRT(IDispatch, GetIDsOfNames)
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
             _IALEEvents * This,
             /* [in] */ REFIID riid,
@@ -644,6 +697,7 @@ EXTERN_C const IID DIID__IALEEvents;
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
+        DECLSPEC_XFGVIRT(IDispatch, Invoke)
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             _IALEEvents * This,
             /* [annotation][in] */ 
